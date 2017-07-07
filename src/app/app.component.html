@@ -17,13 +17,11 @@
 
 
 
-<button type="button" class="btn btn-success btn-s" name="upload" (click)=Uploadselected()>Upload</button>
-<button type="button" class="btn btn-success btn-s" name="search" (click)=Searchselected()> Search</button>
-<button type="button" class="btn btn-success btn-s" name="dashboard" (click)=Dashboardselected()> Dashboard</button>
+<nav md-tab-nav-bar>
+    <button md-tab-button *ngFor="let tab of tabLabels" (click)="switchTab(tab)">  {{tab}}  </button>
+  </nav>
 
-     <div *ngIf="Uploadchosen==true"><upload></upload></div>
-     <div *ngIf="Searchchosen==true"><search></search></div>
-
-     <div *ngIf="Dashboardchosen==true"><dashboard></dashboard></div>
- <br/>
+<div *ngIf="tabs['Dashboard'].state"><dashboard></dashboard></div>
+<div *ngIf="tabs['Upload'].state"><upload></upload></div>
+<div *ngIf="tabs['Search'].state"><search></search></div>
 
