@@ -9,7 +9,8 @@ import { SearchComponent} from './search.component';
 import { SearchService } from './search.service';
 import {UploadComponent} from './upload.component';
 import { FileSelectDirective, FileDropDirective} from 'ng2-file-upload';
-import { RouterModule }   from '@angular/router';
+
+import {DashboardComponent} from './dashboard.component';
 
 
 
@@ -19,30 +20,16 @@ import { RouterModule }   from '@angular/router';
     SearchComponent,
     UploadComponent,
     FileSelectDirective,
-    FileDropDirective
+    FileDropDirective,
+    DashboardComponent
     
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpModule,
-    RouterModule.forRoot([
-  {
-    path: 'search',
-    component: SearchComponent
-  }
-  ]),
-
-   RouterModule.forRoot([
-  {
-    path: 'upload',
-    component: UploadComponent
-  }
-  ])
-    
-    
-  ],
+    HttpModule
+],
   providers: [CoursesService,SearchService,],
   bootstrap: [AppComponent]
 })
