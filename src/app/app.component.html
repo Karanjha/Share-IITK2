@@ -15,7 +15,15 @@
             </button>
         </div>
 
-<button type="button" class="btn btn-success btn-s" routerLink="/upload">Upload</button>
-     <button type="button" class="btn btn-success btn-s" routerLink="/search"> Search</button>
- <router-outlet></router-outlet>
+
+
+<button type="button" class="btn btn-success btn-s" name="upload" (click)=Uploadselected()>Upload</button>
+<button type="button" class="btn btn-success btn-s" name="search" (click)=Searchselected()> Search</button>
+<button type="button" class="btn btn-success btn-s" name="dashboard" (click)=Dashboardselected()> Dashboard</button>
+
+     <div *ngIf="Uploadchosen==true"><upload></upload></div>
+     <div *ngIf="Searchchosen==true"><search></search></div>
+
+     <div *ngIf="Dashboardchosen==true"><dashboard></dashboard></div>
  <br/>
+
