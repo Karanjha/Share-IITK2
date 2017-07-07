@@ -10,10 +10,19 @@ import {File} from './file';
  
  @Component({
     selector: 'dashboard',
-    template: `<ul class="files">
-    <li *ngFor="let file of files">{{file.name}}</li>
+    template: `
+    <table class="files" cellspacing="500">
     
-    </ul>`
+    <tr *ngFor="let file of files">
+     <td>{{file.name}}</td>  
+     
+      <td> <a>Download</a> <td>  
+      </tr>
+    
+    
+    </table>
+    ` ,
+    styleUrls: ['./app.component.css']
  })
 
  export class DashboardComponent {
