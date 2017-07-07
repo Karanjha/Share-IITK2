@@ -1,0 +1,46 @@
+<form [formGroup]="searchForm" (ngSubmit)="onSearch()">
+    
+    <label for="filename">Filename: </label>
+    <input
+        type="text"
+        class="form-control"
+        id="filename"
+        formControlName="filename">
+    
+    <label for="filetype">Filetype: </label>
+    <select
+        class="form-control"
+        id="filetype"
+        formControlName="filetype">
+            <option
+                *ngFor="let filetype of filetypes"
+                [value]="filetype">
+                    {{filetype}}
+            </option>
+    </select>
+
+    <label for="Course">Course: </label>
+    <input
+        list="courses"
+        name="course"
+        onfocus="this.value = this.value=='Select Course'?'':this.value;" 
+        onblur="this.value = this.value==''?'Select Course':this.value;" 
+        class="form-control"
+        id="course"
+        formControlName="course">
+            <datalist id="courses">
+                <option *ngFor="let course of courses" value="{{course}}">
+            </datalist>
+        
+    <button 
+        class="btn btn-primary" 
+        type="submit" 
+        [disabled]="!searchForm.valid">Search
+    </button>
+    
+    <div *ngFor="let result of results">
+        
+        <img src="{{result.images.original.url}}">
+    </div>
+
+</form>
