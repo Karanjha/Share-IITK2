@@ -11,24 +11,24 @@ import {DashboardComponent} from './dashboard.component';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-      Uploadchosen=false;
-      Searchchosen=false;
-      Dashboardchosen=false;
-      
-      Uploadselected(){
-        this.Uploadchosen=true
-        this.Searchchosen=false;
-        this.Dashboardchosen=false;
-      }
-      Searchselected(){
-        this.Searchchosen=true
-        this.Uploadchosen=false;
-        this.Dashboardchosen=false;
-      }
-      Dashboardselected(){
-        this.Searchchosen=false
-        this.Uploadchosen=false;
-        this.Dashboardchosen=true;
-      }
+       tabLabels: string[] = ['Dashboard', 'Upload', 'Search'];
 
+  currTab: string = 'Dashboard';
+
+  tabs: {} = {
+    'Dashboard' : {'state': true},
+    'Search': {'state': false},
+    'Upload': {'state': false},
+  };
+   check(state) {
+    this.tabs[this.currTab].state = state;
+  }
+
+  switchTab(tab: string) {
+    if (this.currTab !== tab) {
+      this.tabs[this.currTab].state = false;
+      this.tabs[tab].state = true;
+      this.currTab = tab;
+    }
+  }
 }
