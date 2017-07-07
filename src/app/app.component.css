@@ -1,0 +1,19 @@
+a{
+    color: red;
+}
+a:hover{
+    background-color: blue;
+    color: white;
+    font-weight: bold; 
+ }
+li {
+    line-height: 400%;
+}
+table{
+    width: 100%;
+       line-height: 400%;
+
+}
+td {
+ 
+}
