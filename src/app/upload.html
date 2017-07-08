@@ -5,9 +5,49 @@
  
     html, body { height: 100%; }
 </style>
+<form [formGroup]="uploadForm">
+<label for="filetype">Filetype (Required) : </label>
+    <select
+        class="form-control"
+        id="filetype"
+        formControlName="filetype">
+            <option
+                *ngFor="let filetype of filetypes"
+                [value]="filetype">
+                    {{filetype}}
+            </option>
+    </select>
+    
+<label for="course code">Course Code (Required) :</label>
+      <input
+        list="courses"
+        name="course"
+        onfocus="this.value = this.value=='Select Course'?'':this.value;" 
+        onblur="this.value = this.value==''?'Select Course':this.value;" 
+        class="form-control"
+        id="course"
+        formControlName="course"
+        required>
+            <datalist id="courses">
+                <option *ngFor="let course of courses" value="{{course}}">
+            </datalist>
+<br/>
+<label for="Academic Year">Academic Session (Required) :</label>
 
+    <input type="text"  placeholder="Session, eg-2016-17" id="session" formControlName="session"  />      
 
- 
+<label for="semester">Semester (Required) : </label>
+    <select
+        id="semester"
+        formControlName="semester" >
+            <option>Select Semester</option>
+            <option>I</option>
+            <option>II</option>
+            <option>Summer Term</option>
+    </select>
+    
+
+ </form>
 <div class="container">
  
     
@@ -59,6 +99,17 @@
                 </tr>
                 </tbody>
             </table>
+
+            <div class="description">
+    <br/>
+    <label for="description">Description (Optional but recommended) :</label>
+        <textarea  
+            id="description"  
+            rows="5" 
+            class="form-control"
+            placeholder="Optional">
+        </textarea>
+</div>
  
             <div>
                 <div>
@@ -68,7 +119,7 @@
                     </div>
                 </div>
                 <button type="button" class="btn btn-success btn-s"
-                        (click)="uploader.uploadAll()" [disabled]="!uploader.getNotUploadedItems().length">
+                        (click)="uploader.uploadAll()" [disabled]="!uploader.getNotUploadedItems().length || !uploadForm.valid">
                     <span class="glyphicon glyphicon-upload"></span> Upload all
                 </button>
                 <button type="button" class="btn btn-warning btn-s"
@@ -86,3 +137,4 @@
     </div>
  
 </div>
+
