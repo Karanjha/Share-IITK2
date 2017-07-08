@@ -1,3 +1,3 @@
 export class File {
-    name: string;
+    name: string; type: string; course: string;
 }
