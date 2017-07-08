@@ -1,27 +1,21 @@
+<div><title>Share IITK</title></div>
+
+<div class="header-class">
 <div class="header">
     <br>
     <h1 align="center"> Share IIT Kanpur </h1>
     <h2 align="center"> Everything you need at one place!</h2><br>
+    </div>
 <nav class="navbar navbar-default">
     <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
-            aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-        </div>
-
-
-
-<nav md-tab-nav-bar>
-    <button md-tab-button *ngFor="let tab of tabLabels" (click)="switchTab(tab)">  {{tab}}  </button>
-  </nav>
-
+        
+        <div class="navbar"><nav md-tab-nav-bar>
+    <button  md-tab-button class="btn btn-default" *ngFor="let tab of tabLabels" (click)="switchTab(tab)">  {{tab}}  </button>
+  </nav> </div>
+    
 <div *ngIf="tabs['Dashboard'].state"><dashboard></dashboard></div>
 <div *ngIf="tabs['Upload'].state"><upload></upload></div>
 <div *ngIf="tabs['Search'].state"><search></search></div>
+    </div>
+   
 

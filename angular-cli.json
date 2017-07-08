@@ -7,20 +7,17 @@
     {
       "root": "src",
       "outDir": "dist",
-      "assets": [
-        "assets",
-        "favicon.ico"
-      ],
+      
       "index": "index.html",
       "main": "main.ts",
       "polyfills": "polyfills.ts",
       "test": "test.ts",
       "tsconfig": "tsconfig.json",
       "prefix": "app",
-      "styles": ["D:/basu/node_modules/bootstrap/dist/css/bootstrap.min.css",
+      "styles": ["D:/ShareIITK/node_modules/bootstrap/dist/css/bootstrap.min.css",
         "styles.css"
       ],
-      "scripts": ["D:/basu/node_modules/bootstrap/dist/js/bootstrap.min.js","D:/basu/node_modules/jquery/dist/jquery.min.js"],
+      "scripts": ["D:/ShareIITK/node_modules/bootstrap/dist/js/bootstrap.min.js","D:/ShareIITK/node_modules/jquery/dist/jquery.min.js"],
       "environments": {
         "source": "environments/environment.ts",
         "dev": "environments/environment.ts",

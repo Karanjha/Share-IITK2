@@ -4,6 +4,8 @@ import { SearchComponent} from './search.component';
 import { FileSelectDirective, FileDropDirective, FileUploader } from 'ng2-file-upload/ng2-file-upload';
 import {UploadComponent} from './upload.component';
 import {DashboardComponent} from './dashboard.component';
+import { FavoriteComponent } from './favorite.component';
+
 
 @Component({
   selector: 'app-root',
@@ -30,5 +32,10 @@ export class AppComponent {
       this.tabs[tab].state = true;
       this.currTab = tab;
     }
+  }
+  tweet = {
+    totalLikes: 10,
+    iLike: false
+    
   }
 }

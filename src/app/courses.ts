@@ -1,1 +1,1 @@
-export var Courses: string[] = ['ESC101','MTH101','MTH102','CHM101','ART106','CHM102','PHY103','PHY102','PHY101','TA101','LIF101','CSE201'];
+export const Courses: string[] = ['ESC101','MTH101','MTH102','CHM101','ART106','CHM102','PHY103','PHY102','PHY101','TA101','LIF101','CSE201'];

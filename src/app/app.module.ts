@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { FavoriteComponent } from './favorite.component';
 
 import { AppComponent } from './app.component';
 import { CoursesService} from './courses.service';
@@ -21,7 +22,8 @@ import {DashboardComponent} from './dashboard.component';
     UploadComponent,
     FileSelectDirective,
     FileDropDirective,
-    DashboardComponent
+    DashboardComponent,
+    FavoriteComponent
     
   ],
   imports: [
@@ -30,7 +32,7 @@ import {DashboardComponent} from './dashboard.component';
     ReactiveFormsModule,
     HttpModule
 ],
-  providers: [CoursesService,SearchService,],
+  providers: [CoursesService,SearchService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

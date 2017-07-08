@@ -20,4 +20,6 @@ export class searchValidators {
         return null;
     }
 
-}
+    
+    }
+
